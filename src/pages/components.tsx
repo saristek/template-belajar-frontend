@@ -13,16 +13,15 @@ import {
 import Button from '@/components/buttons/Button';
 import IconButton from '@/components/buttons/IconButton';
 import TextButton from '@/components/buttons/TextButton';
-import Layout from '@/components/layout/Layout';
+import DefaultLayout from '@/components/layouts/page/DefaultLayout';
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
 import PrimaryLink from '@/components/links/PrimaryLink';
 import UnderlineLink from '@/components/links/UnderlineLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
-import Seo from '@/components/Seo';
+import { PageSEO } from '@/components/SEO';
 import Skeleton from '@/components/Skeleton';
-
 type Color = typeof colorList[number];
 
 export default function ComponentsPage() {
@@ -35,9 +34,9 @@ export default function ComponentsPage() {
   const textColor = mode === 'dark' ? 'text-gray-300' : 'text-gray-600';
 
   return (
-    <Layout>
-      <Seo
-        templateTitle='Components'
+    <DefaultLayout>
+      <PageSEO
+        title='Components'
         description='Pre-built components with awesome default'
       />
 
@@ -458,7 +457,7 @@ export default function ComponentsPage() {
           </div>
         </section>
       </main>
-    </Layout>
+    </DefaultLayout>
   );
 }
 

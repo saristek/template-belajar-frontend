@@ -1,18 +1,12 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 
+import Favicon from '@/components/Favicon';
 export default function Document() {
   return (
     <Html lang='en'>
-      <Head>
-        <link
-          rel='preload'
-          href='/fonts/inter-var-latin.woff2'
-          as='font'
-          type='font/woff2'
-          crossOrigin='anonymous'
-        />
-      </Head>
-      <body>
+      <Head />
+      <Favicon />
+      <body className="bg-white text-black antialiased dark:bg-black dark:text-white">
         <Main />
         <NextScript />
       </body>

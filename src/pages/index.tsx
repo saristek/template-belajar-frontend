@@ -1,31 +1,18 @@
 import * as React from 'react';
 
-import Layout from '@/components/layout/Layout';
+import DefaultLayout from '@/components/layouts/page/DefaultLayout';
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
 import UnderlineLink from '@/components/links/UnderlineLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
-import Seo from '@/components/Seo';
-
-/**
- * SVGR Support
- * Caveat: No React Props Type.
- *
- * You can override the next-env if the type is important to you
- * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
- */
+import { PageSEO } from '@/components/SEO';
+import MobNav from '@/components/Bar/MobNav';
 import Vercel from '~/svg/Vercel.svg';
-
-// !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
-// Before you begin editing, follow all comments with `STARTERCONF`,
-// to customize the default configuration.
 
 export default function HomePage() {
   return (
-    <Layout>
-      {/* <Seo templateTitle='Home' /> */}
-      <Seo />
-
+    <DefaultLayout>
+      <PageSEO title="judul" description='descr' />
       <main>
         <section className='bg-white'>
           <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
@@ -69,6 +56,9 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-    </Layout>
+      <div className="fixed z-40 bottom-0 w-full  md:hidden">
+        <MobNav />
+      </div>
+    </DefaultLayout>
   );
 }
